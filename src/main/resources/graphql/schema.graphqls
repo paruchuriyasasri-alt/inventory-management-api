@@ -1,0 +1,31 @@
+type Query {
+    products(category: String): [Product]
+    productById(id: ID!): Product
+    lowStockProducts: [Product]
+}
+
+type Product {
+    id: ID!
+    sku: String
+    name: String
+    description: String
+    quantity: Int
+    price: Float
+    reorderLevel: Int
+    category: Category
+    warehouse: Warehouse
+}
+
+type Category {
+    id: ID!
+    name: String
+    description: String
+}
+
+type Warehouse {
+    id: ID!
+    name: String
+    location: String
+    city: String
+    state: String
+}
